@@ -9,8 +9,9 @@ const app = express();
 app.use(cors(
   {
     origin:["https://invoice-management-system-frontend.vercel.app"],
-    method:['POST','GET'],
-    credentials:true
+    method:['POST','GET','PUT','DELETE'],
+    credentials:true,
+    allowedHeaders: ["Content-Type", "Authorization"]
   }
 ));
 app.use(express.json());
