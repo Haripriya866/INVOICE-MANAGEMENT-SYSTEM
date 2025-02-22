@@ -8,7 +8,7 @@ const jwt = require("jsonwebtoken");
 const app = express();
 app.use(cors(
   {
-    origin:["http://deploy-mern.vercel.app"],
+    origin:["https://invoice-management-system-frontend.vercel.app"],
     method:['POST','GET'],
     credentials:true
   }
