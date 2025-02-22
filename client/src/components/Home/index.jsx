@@ -8,7 +8,7 @@ function Home(){
 
     useEffect(()=>{
       const getData = async () => {
-        const apiUrl='http://localhost:3001/invoices'
+        const apiUrl='https://invoice-management-system-api.vercel.app/invoices'
         const response=await fetch(apiUrl)
         if(response.ok===true){
           const data=await response.json()
@@ -20,7 +20,7 @@ function Home(){
     },[])
 
     const handleDelete=async(id)=>{
-      const deleteUrl='http://localhost:3001/deleteinvoice/'+id
+      const deleteUrl='https://invoice-management-system-api.vercel.app/deleteinvoice/'+id
       const options = {
         method: "DELETE"
       };

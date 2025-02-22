@@ -163,7 +163,7 @@ function CreateInvoice(){
         }
     
         const userDetails = { invoiceNumber,clientName,date,amount,status };
-        const url = "http://localhost:3001/createinvoice";
+        const url = "https://invoice-management-system-api.vercel.app/createinvoice";
     
         const options = {
           method: "POST",

@@ -103,7 +103,7 @@ const Register=()=>{
   
       const userDetails = { name, email, password };
   
-      const url = "http://localhost:3001/";
+      const url = "https://invoice-management-system-api.vercel.app/";
   
       const options = {
         method: "POST",

@@ -19,7 +19,7 @@ function UpdateInvoice(){
 
      useEffect(()=>{
           const getData = async () => {
-            const apiUrl='http://localhost:3001/getupdate/'+id
+            const apiUrl='https://invoice-management-system-api.vercel.app/getupdate/'+id
             const response=await fetch(apiUrl)
             if(response.ok===true){
               const data=await response.json()
@@ -182,7 +182,7 @@ function UpdateInvoice(){
     
         const userDetails = { invoiceNumber,clientName,date,amount,status };
        
-        const url="http://localhost:3001/updateinvoice/"+id
+        const url="https://invoice-management-system-api.vercel.app/updateinvoice/"+id
         
         const options = {
             method:'PUT',
