@@ -6,7 +6,13 @@ const InvoiceModel = require("./models/Invoices");
 const jwt = require("jsonwebtoken");
 
 const app = express();
-app.use(cors());
+app.use(cors(
+  {
+    origin:["http://deploy-mern.vercel.app"],
+    method:['POST','GET'],
+    credentials:true
+  }
+));
 app.use(express.json());
 
 mongoose.connect("mongodb://localhost:27017/test");
