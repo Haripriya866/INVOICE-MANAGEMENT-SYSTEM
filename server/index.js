@@ -6,20 +6,21 @@ const InvoiceModel = require("./models/Invoices");
 const jwt = require("jsonwebtoken");
 
 const app = express();
-app.use(cors(
-  {
-    origin:["https://invoice-management-system-frontend.vercel.app"],
-    method:['POST','GET','PUT','DELETE'],
-    credentials:true,
-    allowedHeaders: ["Content-Type", "Authorization"]
-  }
-));
+app.use(
+  cors({
+    origin: ["https://invoice-management-system-frontend.vercel.app"],
+    method: ["POST", "GET", "PUT", "DELETE"],
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://haripriyakanike:HaripriyaSrinivas@&%342@cluster0.6sq0s.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  "mongodb+srv://haripriyakanike:Haripriya@cluster0.6sq0s.mongodb.net/test",
+)
+.then(() => console.log("MongoDB Connected Successfully"))
+ .catch((err) => console.error("MongoDB Connection Error:", err));
 
 app.listen(3001, () => {
   console.log("Server is Running on 3001");
