@@ -9,14 +9,13 @@ const app = express();
 app.use(
   cors({
     origin: "https://invoice-management-system-frontend.vercel.app",
-    methods: ["POST", "GET", "PUT", "DELETE"],
+    methods: ["POST", "GET", "PUT", "DELETE","OPTIONS"],
     credentials: true,
     allowedHeaders: ["Content-Type"],
   })
 );
 app.use(express.json());
 app.options('*', cors());
-
 
 mongoose.connect(
   "mongodb+srv://haripriyakanike:Haripriya@cluster0.6sq0s.mongodb.net/test",
@@ -165,3 +164,5 @@ app.put("/updateinvoice/:id", async (request, response) => {
     response.status(500).json({ error: "Internal Server Error" });
   }
 });
+
+module.exports = app;
